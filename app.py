@@ -34,8 +34,9 @@ uploaded_files = st.sidebar.file_uploader(
 #     temperature=0
 #     )
 llm = ChatGoogleGenerativeAI(
-    model="gemini-1.5-flash",
-    temperature=0.2
+    model="gemini-pro",
+    temperature=0.2,
+    max_output_tokens=512
 )
 prompt = ChatPromptTemplate.from_template("""
 You are a knowledgeable AI assistant.

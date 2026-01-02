@@ -12,7 +12,7 @@ from langchain_community.document_loaders import PyPDFLoader
 from langchain_community.embeddings import HuggingFaceEmbeddings
 # from langchain_community.chat_models import ChatOllama
 from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain_core.vectorstores import InMemoryVectorStore
+from langchain_community.vectorstores import FAISS
 # from langchain.chat_models import init_chat_model
 from langgraph.graph import START, StateGraph
 
@@ -85,8 +85,7 @@ if uploaded_files and st.session_state.vector_store is None:
             model_name="sentence-transformers/all-MiniLM-L6-v2"
         )
 
-        vector_store = InMemoryVectorStore(embeddings)
-        vector_store.add_documents(all_splits)
+        vector_store = FAISS.from_documents(all_splits, embeddings)
 
         st.session_state.vector_store = vector_store
 

@@ -8,7 +8,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.documents import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import PyPDFLoader
-from langchain_community.document_loaders.parsers import RapidOCRBlobParser
+# from langchain_community.document_loaders.parsers import RapidOCRBlobParser
 from langchain_community.embeddings import HuggingFaceEmbeddings
 # from langchain_community.chat_models import ChatOllama
 from langchain_google_genai import ChatGoogleGenerativeAI
@@ -68,12 +68,7 @@ if uploaded_files and st.session_state.vector_store is None:
                 tmp.write(uploaded_file.read())
                 temp_pdf_path = tmp.name
 
-            loader = PyPDFLoader(
-                temp_pdf_path,
-                mode="single",
-                images_inner_format="markdown-img",
-                images_parser=RapidOCRBlobParser
-            )
+            loader = PyPDFLoader(temp_pdf_path)
 
             docs = loader.load()
             all_documents.extend(docs)

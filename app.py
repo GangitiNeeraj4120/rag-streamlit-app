@@ -34,7 +34,7 @@ uploaded_files = st.sidebar.file_uploader(
 #     temperature=0
 #     )
 llm = ChatGoogleGenerativeAI(
-    model="gemini-pro",
+    model="models/gemini-1.0-pro",
     temperature=0.2,
     max_output_tokens=512
 )

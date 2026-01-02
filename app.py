@@ -8,13 +8,9 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.documents import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import PyPDFLoader
-# from langchain_community.document_loaders.parsers import RapidOCRBlobParser
 from langchain_community.embeddings import HuggingFaceEmbeddings
-# from langchain_community.chat_models import ChatOllama
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_community.vectorstores import FAISS
-# from langchain.chat_models import init_chat_model
-from langgraph.graph import START, StateGraph
 
 load_dotenv()
 os.environ["LANGCHAIN_TRACING_V2"] = "false"

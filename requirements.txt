@@ -1,10 +1,11 @@
-streamlit
-langchain==0.1.20
-langchain-community==0.0.38
-langchain-core==0.1.52
-langchain-google-genai==0.0.11
+langchain==0.3.26
+langchain-core==0.3.66
+langchain-community==0.3.26
+langchain-text-splitters==0.3.8
+langchain-groq
 sentence-transformers
-pypdf
 faiss-cpu
+pypdf
+streamlit
 python-dotenv
 tf-keras

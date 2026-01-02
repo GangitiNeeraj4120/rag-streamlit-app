@@ -9,7 +9,7 @@ from langchain_core.documents import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_community.embeddings import HuggingFaceEmbeddings
-from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_groq import ChatGroq
 from langchain_community.vectorstores import FAISS
 
 load_dotenv()
@@ -29,10 +29,9 @@ uploaded_files = st.sidebar.file_uploader(
 #     model="llama3",
 #     temperature=0
 #     )
-llm = ChatGoogleGenerativeAI(
-    model="models/gemini-1.0-pro",
-    temperature=0.2,
-    max_output_tokens=512
+llm = ChatGroq(
+    model="llama3-8b-8192",
+    temperature=0.2
 )
 prompt = ChatPromptTemplate.from_template("""
 You are a knowledgeable AI assistant.

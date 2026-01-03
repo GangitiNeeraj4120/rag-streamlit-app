@@ -15,10 +15,10 @@ from langchain_community.vectorstores import FAISS
 load_dotenv()
 os.environ["LANGCHAIN_TRACING_V2"] = "false"
 
-st.set_page_config(page_title="PDF RAG App", layout="wide")
-st.title(":books: Question Answering (RAG)")
+st.set_page_config(page_title="PDF RAG App", layout="wide", page_icon=":books:")
+st.title("Chat with multiple PDFs :books:")
 
-st.sidebar.header("Upload files")
+st.sidebar.header("Upload files Here!")
 uploaded_files = st.sidebar.file_uploader(
     "Upload one or more PDF files",
     type=["pdf"],
